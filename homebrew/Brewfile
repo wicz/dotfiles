@@ -4,6 +4,7 @@ tap "thoughtbot/formulae"
 tap "getantibody/tap"
 tap "heroku/brew"
 
+brew "hivemind"
 brew "tmux"
 brew "zsh"
 brew "neovim"
