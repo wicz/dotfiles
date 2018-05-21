@@ -1,7 +1,10 @@
 cask_args appdir: "/Applications"
 
 tap "thoughtbot/formulae"
+tap "getantibody/tap"
+tap "heroku/brew"
 
+brew "tmux"
 brew "zsh"
 brew "neovim"
 brew "direnv"
