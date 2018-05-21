@@ -6,6 +6,8 @@ set softtabstop=2
 set splitbelow " natural split order
 set splitright
 
+let g:python3_host_prog='/usr/local/bin/python3'
+
 call plug#begin()
 Plug 'lambdalisue/vim-gista'
 Plug 'Shougo/denite.nvim'
