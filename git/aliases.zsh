@@ -1,6 +1,12 @@
 alias g='git'
 alias gN='git-nuke'
 
+# Log (l)
+alias gl='git log'
+alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
+alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
+alias glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
+
 # Branch (b)
 alias gbc='git checkout -b'
 alias gbl='git branch  --all --verbose'
