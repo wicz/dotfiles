@@ -71,9 +71,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>958 440 766 447 0 0 3360 1867 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>734 822 796 473 0 0 3360 1890 </string>
+	<string>734 901 796 473 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>218 221 890 600 0 0 3360 1890 </string>
+	<string>0 1267 890 600 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 3360 1890 0 0 3360 1867 </string>
 	<key>New Bookmarks</key>
@@ -242,6 +242,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Blink Allowed</key>
+			<false/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -696,6 +698,10 @@
 	<real>548591498.47379899</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -733,6 +739,8 @@
 	<string>/Users/vinicius/.dotfiles/iterm2</string>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>RunJobsInServers</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
