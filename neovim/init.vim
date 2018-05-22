@@ -12,9 +12,14 @@ call plug#begin()
 Plug 'lambdalisue/vim-gista'
 Plug 'Shougo/denite.nvim'
 Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" vim-airline
+let g:airline_powerline_fonts = 1
 
 " vim-gista
 let g:gista#client#default_username = 'wicz'
@@ -61,3 +66,8 @@ nnoremap <Leader>h :set hlsearch!<CR>
 
 " back to previous buffer
 nnoremap <Leader>\ :b#<CR>
+
+" vim-fugitive
+set previewheight=20
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gr :Gread<CR>:w<CR>
