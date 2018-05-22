@@ -11,7 +11,10 @@ let g:python3_host_prog='/usr/local/bin/python3'
 call plug#begin()
 Plug 'lambdalisue/vim-gista'
 Plug 'Shougo/denite.nvim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
+
+colorscheme base16-material-darker
 
 " vim-gista
 let g:gista#client#default_username = 'wicz'
