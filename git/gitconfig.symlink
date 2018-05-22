@@ -9,3 +9,5 @@
 [user]
 	name = Vinicius Horewicz
 	email = vinicius@horewi.cz
+[core]
+	excludesfile = /Users/vinicius/.gitignore
