@@ -41,9 +41,21 @@ call denite#custom#map(
   \)
 
 call denite#custom#var(
-  \ 'file/rec', 
+  \ 'file/rec',
   \ 'command',
   \ ['rg', '--files', '--glob', '!.git']
+  \)
+
+call denite#custom#option(
+  \ '_',
+  \ 'highlight_matched_range',
+  \ 'None'
+  \)
+
+call denite#custom#option(
+  \ '_',
+  \ 'highlight_matched_char',
+  \ 'None'
   \)
 
 nnoremap <Leader>p :Denite file/rec<CR>
