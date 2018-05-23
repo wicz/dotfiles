@@ -12,6 +12,7 @@ set scrolloff=10 " number of lines around cursor
 set smartindent
 set cursorline " highlight current line
 set conceallevel=2
+set tags+=.tags
 
 let g:python3_host_prog='/usr/local/bin/python3'
 
@@ -46,10 +47,13 @@ colorscheme base16-material-darker
 let g:deoplete#enable_at_startup = 1
 
 call deoplete#custom#option({
-  \ 'auto_complete': v:false,
   \ 'smart_case': v:true,
   \ 'num_processes': 2,
   \ })
+
+call deoplete#custom#option('sources', {
+  \ '_': ['buffer', 'omni', 'tag'],
+  \})
 
 " vim-jsx
 let g:jsx_ext_required = 0
