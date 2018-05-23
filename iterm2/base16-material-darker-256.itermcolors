@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Base16 Material Darker
+    Base16 Material Darker-256
     Template: Chris Kempson, Scheme: Nate Peterson
     semanticClass: theme.base16.material-darker
 -->
@@ -34,55 +34,55 @@
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.1882353</real>
+		<real>0.5529412</real>
 		<key>Green Component</key>
-		<real>0.1882353</real>
+		<real>0.9098039</real>
 		<key>Red Component</key>
-		<real>0.1882353</real>
+		<real>0.7647059</real>
 	</dict>
 	<key>Ansi 11 Color</key>
 	<dict>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.20784314</real>
+		<real>0.41960785</real>
 		<key>Green Component</key>
-		<real>0.20784314</real>
+		<real>0.79607844</real>
 		<key>Red Component</key>
-		<real>0.20784314</real>
+		<real>1</real>
 	</dict>
 	<key>Ansi 12 Color</key>
 	<dict>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.8392157</real>
+		<real>1</real>
 		<key>Green Component</key>
-		<real>0.8</real>
+		<real>0.6666667</real>
 		<key>Red Component</key>
-		<real>0.69803923</real>
+		<real>0.50980395</real>
 	</dict>
 	<key>Ansi 13 Color</key>
 	<dict>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.91764706</real>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.57254905</real>
 		<key>Red Component</key>
-		<real>0.93333334</real>
+		<real>0.78039217</real>
 	</dict>
 	<key>Ansi 14 Color</key>
 	<dict>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.4392157</real>
-		<key>Green Component</key>
-		<real>0.3254902</real>
-		<key>Red Component</key>
 		<real>1</real>
+		<key>Green Component</key>
+		<real>0.8666667</real>
+		<key>Red Component</key>
+		<real>0.5372549</real>
 	</dict>
 	<key>Ansi 15 Color</key>
 	<dict>
@@ -177,11 +177,11 @@
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Blue Component</key>
-		<real>0.42352942</real>
+		<real>0.47058824</real>
 		<key>Green Component</key>
-		<real>0.54901963</real>
+		<real>0.44313726</real>
 		<key>Red Component</key>
-		<real>0.96862745</real>
+		<real>0.9411765</real>
 	</dict>
 	<key>Background Color</key>
 	<dict>
