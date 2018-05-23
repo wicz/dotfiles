@@ -5,18 +5,54 @@ set shiftwidth=2
 set softtabstop=2
 set splitbelow " natural split order
 set splitright
+set list listchars=tab:▸\ ,trail:·,precedes:←,extends:→
+set number " show line numbers
+set colorcolumn=80 " show vertical guide at 80
+set scrolloff=10 " number of lines around cursor
+set smartindent
+set cursorline " highlight current line
+set conceallevel=2
 
 let g:python3_host_prog='/usr/local/bin/python3'
 
 call plug#begin()
-Plug 'lambdalisue/vim-gista'
-Plug 'Shougo/denite.nvim'
+Plug 'ap/vim-css-color'
 Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
+Plug 'elmcast/elm-vim'
+Plug 'elzr/vim-json'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'lambdalisue/vim-gista'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
+Plug 'shougo/denite.nvim'
+Plug 'shougo/deoplete.nvim'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+call deoplete#custom#option({
+  \ 'auto_complete': v:false,
+  \ 'smart_case': v:true,
+  \ 'num_processes': 2,
+  \ })
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " vim-airline
 let g:airline_powerline_fonts = 1
