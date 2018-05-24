@@ -26,6 +26,7 @@ Plug 'elzr/vim-json'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lambdalisue/vim-gista'
+Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
@@ -44,6 +45,14 @@ Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" vim-markdown
+let g:vim_markdown_frontmatter = 1
+
+" emmet-vim
+let g:user_emmet_mode = 'iv'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,markdown EmmetInstall
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
