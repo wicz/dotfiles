@@ -142,3 +142,13 @@ nnoremap <Leader>\ :b#<CR>
 set previewheight=20
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>:w<CR>
+
+" strip whitespace on save for non-md
+fun! StripWhitespace()
+  if &ft =~ 'markdown'
+    return
+  endif
+
+  %s/\s\+$//e
+endfun
+autocmd BufWritePre * :call StripWhitespace()

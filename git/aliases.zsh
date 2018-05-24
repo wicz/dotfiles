@@ -14,6 +14,7 @@ alias gbl='git branch  --all --verbose'
 alias gbx='git branch --delete'
 alias gbX='git branch --delete --force'
 alias gbm='git branch --move'
+alias gbC='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 # Fetch (f)
 alias gf='git fetch'
@@ -56,3 +57,7 @@ alias gRl='git remote --verbose'
 alias gRa='git remote add'
 alias gRx='git remote rm'
 alias gRm='git remote rename'
+
+# Merge (m)
+alias gm='git merge'
+alias gma='git merge --abort'
