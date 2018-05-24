@@ -1,0 +1,16 @@
+doctype: omit
+bare: yes
+logical-emphasis: yes
+preserve-entities: yes
+enclose-text: yes
+join-classes: no
+join-styles: no
+merge-emphasis: yes
+break-before-br: yes
+indent: yes
+indent-attributes: yes
+sort-attributes: alpha
+tab-size: 2
+tidy-mark: no
+vertical-space: yes
+wrap: 80

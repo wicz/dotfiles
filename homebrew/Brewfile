@@ -26,6 +26,7 @@ brew "getantibody/tap/antibody"
 brew "heroku/brew/heroku"
 brew "parity", args: ["--ignore-dependencies"]
 brew "ctags"
+brew "tidy-html5"
 
 cask "1password"
 cask "firefox"
