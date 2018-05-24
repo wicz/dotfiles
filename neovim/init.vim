@@ -14,6 +14,7 @@ set cursorline " highlight current line
 set conceallevel=2
 set tags+=.tags
 set noswapfile
+set termguicolors
 
 let g:python3_host_prog='/usr/local/bin/python3'
 
