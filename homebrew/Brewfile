@@ -27,6 +27,7 @@ brew "heroku/brew/heroku"
 brew "parity", args: ["--ignore-dependencies"]
 brew "ctags"
 brew "tidy-html5"
+brew "carthage"
 
 cask "1password"
 cask "firefox"
