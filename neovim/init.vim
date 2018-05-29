@@ -21,9 +21,11 @@ let g:python3_host_prog='/usr/local/bin/python3'
 call plug#begin()
 Plug 'ap/vim-css-color'
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'elmcast/elm-vim'
 Plug 'elzr/vim-json'
 Plug 'godlygeek/tabular'
+Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lambdalisue/vim-gista'
 Plug 'mattn/emmet-vim'
@@ -45,6 +47,15 @@ Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" vim-tmux-runner
+let g:VtrPercentage = 40
+
+" vim-test
+let test#strategy = "vtr"
+nnoremap <Leader>ts :TestNearest<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>tl :TestLast<CR>
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1

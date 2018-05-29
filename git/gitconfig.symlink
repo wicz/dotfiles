@@ -1,13 +1,14 @@
 [alias]
-	st = status
-	co = checkout
-	ci = commit
+  st = status
+  co = checkout
+  ci = commit
+  cp = cherry-pick
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [user]
-	name = Vinicius Horewicz
-	email = vinicius@horewi.cz
+  name = Vinicius Horewicz
+  email = vinicius@horewi.cz
 [core]
-	excludesfile = /Users/vinicius/.gitignore
+  excludesfile = /Users/vinicius/.gitignore

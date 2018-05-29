@@ -273,6 +273,12 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>60F62A85-0F22-4F96-A151-1A6C7B1DE9FA</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
@@ -431,7 +437,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>958 440 766 447 0 0 3360 1867 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>718 1011 796 473 0 0 3360 1890 </string>
+	<string>718 1076 796 473 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 1267 890 600 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1201,11 +1207,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-23T17:10:07Z</date>
+	<date>2018-05-29T10:22:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.10</real>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>UseLionStyleFullscreen</key>
