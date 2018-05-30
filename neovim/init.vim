@@ -163,3 +163,8 @@ fun! StripWhitespace()
   %s/\s\+$//e
 endfun
 autocmd BufWritePre * :call StripWhitespace()
+
+" set spell by filetype
+autocmd FileType markdown,gitcommit setlocal spell spelllang=en
+highlight SpellBad gui=italic guifg=#ff4444
+highlight SpellCap gui=italic
