@@ -7,7 +7,8 @@ set splitbelow " natural split order
 set splitright
 set list listchars=tab:▸\ ,trail:·,precedes:←,extends:→
 set number " show line numbers
-set colorcolumn=80 " show vertical guide at 80
+set textwidth=80 " wrap at 80
+set colorcolumn=+1 " show vertical guide at (textwidth + 1)
 set scrolloff=10 " number of lines around cursor
 set smartindent
 set cursorline " highlight current line
@@ -15,6 +16,8 @@ set conceallevel=2
 set tags+=.tags
 set noswapfile
 set termguicolors
+set foldmethod=syntax
+set nojoinspaces " use one space after punctuation
 
 let g:python3_host_prog='/usr/local/bin/python3'
 
@@ -44,9 +47,15 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'
+Plug 'w0rp/ale'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" ale
+let b:ale_linters = ['vale']
+let g:ale_linter_aliases = {'gitcommit': 'markdown'}
+highlight ALEWarning gui=italic guifg=#ffe135
 
 " vim-tmux-runner
 let g:VtrPercentage = 40
@@ -59,6 +68,8 @@ nnoremap <Leader>tl :TestLast<CR>
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 " emmet-vim
 let g:user_emmet_mode = 'iv'
