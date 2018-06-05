@@ -1,5 +1,4 @@
 alias g='git'
-alias gN='git-nuke'
 
 # Log (l)
 alias gll='git log'
@@ -19,6 +18,7 @@ alias gbC='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 # Fetch (f)
 alias gf='git fetch'
 alias gfm='git pull'
+alias gfp='git fetch --prune'
 
 # Push (p)
 alias gp='git push'
