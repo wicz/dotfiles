@@ -17,6 +17,7 @@ set tags+=.tags
 set noswapfile
 set termguicolors
 set foldmethod=syntax
+set foldlevelstart=99 " all folds open by default
 set nojoinspaces " use one space after punctuation
 
 let g:python3_host_prog='/usr/local/bin/python3'
