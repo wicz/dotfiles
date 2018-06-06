@@ -29,6 +29,7 @@ brew "parity", args: ["--ignore-dependencies"]
 brew "ctags"
 brew "tidy-html5"
 brew "carthage"
+brew "pandoc"
 
 cask "1password"
 cask "firefox"
