@@ -439,9 +439,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>958 440 766 447 0 0 3360 1867 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1000 986 796 473 0 0 3360 1890 </string>
+	<string>718 1076 796 473 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 14 3354 1876 0 0 3360 1890 </string>
+	<string>0 1267 890 600 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 3360 1890 0 0 3360 1890 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -452,7 +452,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1209,13 +1209,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-06T13:17:07Z</date>
+	<date>2018-05-29T10:22:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.10000000000000001</real>
+	<real>0.10</real>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>UseLionStyleFullscreen</key>
