@@ -16,7 +16,7 @@ set conceallevel=2
 set tags+=.tags
 set noswapfile
 set termguicolors
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=99 " all folds open by default
 set nojoinspaces " use one space after punctuation
 
@@ -40,6 +40,7 @@ Plug 'shougo/denite.nvim'
 Plug 'shougo/deoplete.nvim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
