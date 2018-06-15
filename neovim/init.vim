@@ -55,8 +55,13 @@ call plug#end()
 colorscheme base16-material-darker
 
 " ale
-let b:ale_linters = ['vale']
+let g:ale_linters = {
+  \ 'markdown': ['vale'],
+  \ 'ruby': ['ruby'],
+  \}
+let g:ale_linters_explicit = 1
 let g:ale_linter_aliases = {'gitcommit': 'markdown'}
+let g:airline#extensions#ale#enabled = 1
 highlight ALEWarning gui=italic guifg=#ffe135
 
 " vim-tmux-runner
@@ -187,3 +192,6 @@ autocmd BufWritePre * :call StripWhitespace()
 autocmd FileType markdown,gitcommit setlocal spell spelllang=en
 highlight SpellBad gui=italic guifg=#ff4444
 highlight SpellCap gui=italic
+
+" format whole file, keep current position
+nnoremap <Leader>= mzgg=G`z
