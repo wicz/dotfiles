@@ -62,6 +62,7 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 let g:ale_linter_aliases = {'gitcommit': 'markdown'}
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#tabs_label = ''
 highlight ALEWarning gui=italic guifg=#ffe135
 
 " vim-tmux-runner
