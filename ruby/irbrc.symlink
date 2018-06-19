@@ -1,0 +1,13 @@
+require "irb/completion"
+require "irb/ext/save-history"
+
+def __find_git_root
+  root = `git rev-parse --show-toplevel 2> /dev/null`.strip
+
+  $?.exitstatus == 0 ? root : ENV["HOME"]
+end
+
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{__find_git_root}/.irb_history"
+IRB.conf[:AUTO_INDENT]  = true
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
