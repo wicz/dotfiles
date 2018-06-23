@@ -61,3 +61,6 @@ alias gRm='git remote rename'
 # Merge (m)
 alias gm='git merge'
 alias gma='git merge --abort'
+
+# Pull Request (pr)
+alias gpr='hub pull-request'
