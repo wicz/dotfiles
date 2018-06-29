@@ -159,10 +159,13 @@ nnoremap <Leader>f :Denite -no-empty grep<CR>
 " tabs
 nnoremap <Leader>tn :$tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
+nnoremap <Leader>t[ :tabprevious<CR>
+nnoremap <Leader>t] :tabnext<CR>
 nnoremap <Leader>1 :1tabnext<CR>
 nnoremap <Leader>2 :2tabnext<CR>
 nnoremap <Leader>3 :3tabnext<CR>
 nnoremap <Leader>4 :4tabnext<CR>
+nnoremap <Leader>5 :5tabnext<CR>
 
 " cycling between splits
 nnoremap <Leader>] <C-w>w
