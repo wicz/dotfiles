@@ -78,11 +78,12 @@ nnoremap <Leader>tl :TestLast<CR>
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 2
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 " emmet-vim
 let g:user_emmet_mode = 'iv'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,markdown EmmetInstall
+autocmd FileType html,css EmmetInstall
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
