@@ -203,3 +203,6 @@ highlight SpellCap gui=italic
 
 " format whole file, keep current position
 nnoremap <Leader>= mzgg=G`z
+
+" colors
+highlight Comment guifg=#ABCDEF

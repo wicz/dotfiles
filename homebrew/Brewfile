@@ -31,6 +31,7 @@ brew "tidy-html5"
 brew "carthage"
 brew "pandoc"
 brew "jq"
+brew "xsv"
 
 cask "1password"
 cask "firefox"
