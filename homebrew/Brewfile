@@ -32,6 +32,7 @@ brew "carthage"
 brew "pandoc"
 brew "jq"
 brew "xsv"
+brew "jo"
 
 cask "1password"
 cask "firefox"
