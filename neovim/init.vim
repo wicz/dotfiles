@@ -54,6 +54,9 @@ call plug#end()
 
 colorscheme base16-material-darker
 
+" elm-vim
+let g:elm_setup_keybindings = 0
+
 " ale
 let g:ale_linters = {
   \ 'markdown': ['vale'],
