@@ -55,6 +55,9 @@ call plug#end()
 
 colorscheme base16-material-darker
 
+" vim-terraform
+let g:terraform_fmt_on_save = 1
+
 " elm-vim
 let g:elm_setup_keybindings = 0
 
