@@ -29,8 +29,10 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'elmcast/elm-vim'
 Plug 'elzr/vim-json'
 Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/vim-gista'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
@@ -50,10 +52,13 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
-Plug 'hashivim/vim-terraform'
 call plug#end()
 
 colorscheme base16-material-darker
+
+" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " vim-terraform
 let g:terraform_fmt_on_save = 1
