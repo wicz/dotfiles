@@ -164,6 +164,12 @@ call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
+" Disable deoplete within denite window
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+
 nnoremap <Leader>p :Denite file/rec<CR>
 nnoremap <Leader>b :Denite buffer<CR>
 nnoremap <Leader>f :Denite -no-empty grep<CR>
