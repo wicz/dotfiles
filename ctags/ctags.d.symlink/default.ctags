@@ -1,0 +1,9 @@
+--recurse
+--exclude=.git
+--exclude=log
+--exclude=node_modules
+--exclude=vendor
+--exclude=dist
+--exclude=tmp
+--tag-relative
+--languages=css,ruby,javascript
