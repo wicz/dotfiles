@@ -32,6 +32,7 @@ Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/vim-gista'
 Plug 'mattn/emmet-vim'
@@ -99,7 +100,7 @@ autocmd BufRead,BufNewFile *.slim setlocal formatoptions-=t formatoptions+=l
 " emmet-vim
 let g:user_emmet_mode = 'iv'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,svelte EmmetInstall
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
