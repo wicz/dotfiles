@@ -745,7 +745,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
-			<false/>
+			<true/>
 			<key>Dynamic Profile Filename</key>
 			<string>/Users/vinicius/Library/Application Support/iTerm2/DynamicProfiles/tmux.json</string>
 			<key>Flashing Bell</key>
@@ -1270,7 +1270,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3840, 2160}}</string>
 		<key>topLeft</key>
-		<string>{1037, 1528}</string>
+		<string>{1224, 1758}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1279,7 +1279,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>BFA9ED76-64E8-484F-A627-E55235C6718A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>42</integer>
+	<integer>43</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
