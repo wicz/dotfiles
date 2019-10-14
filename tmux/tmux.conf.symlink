@@ -1,5 +1,5 @@
 set -g escape-time 10
-set -g default-terminal "xterm-256color"
+set -g default-terminal "screen-256color"
 set -g pane-active-border-style "bg=default,fg=green"
 set -g pane-border-style "bg=default,fg=default"
-
+set -ga terminal-overrides ",xterm-256color:RGB"
