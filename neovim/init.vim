@@ -58,6 +58,13 @@ call plug#end()
 
 colorscheme base16-material-darker
 
+" disable q:
+nnoremap q: <nop>
+
+" command aliases
+command! Q :q
+command! Qa :qa
+
 " vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
