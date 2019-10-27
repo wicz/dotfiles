@@ -23,11 +23,12 @@ set nojoinspaces " use one space after punctuation
 let g:python3_host_prog='/usr/local/bin/python3'
 
 call plug#begin()
-Plug 'ap/vim-css-color'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'elmcast/elm-vim'
+Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
+Plug 'evanleck/vim-svelte'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
@@ -35,12 +36,14 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/vim-gista'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
+Plug 'shougo/context_filetype.vim'
 Plug 'shougo/denite.nvim'
-Plug 'shougo/deoplete.nvim'
+Plug 'shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -52,8 +55,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'
-Plug 'w0rp/ale'
-Plug 'evanleck/vim-svelte'
 call plug#end()
 
 colorscheme base16-material-darker
@@ -65,6 +66,24 @@ nnoremap q: <nop>
 command! Q :q
 command! Qa :qa
 
+" context_filetype
+let g:context_filetype#filetypes = {}
+let g:context_filetype#filetypes.svelte =
+  \ [
+  \    {'filetype' : 'javascript', 'start' : '<script>', 'end' : '</script>'},
+  \    {'filetype' : 'css', 'start' : '<style>', 'end' : '</style>'},
+  \ ]
+
+" vim-gutentags
+let g:gutentags_ctags_tagfile = '.tags'
+
+" nvim-colorizer
+lua require 'colorizer'.setup({
+  \ 'css';
+  \ 'html';
+  \ 'javascript';
+  \ })
+
 " vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -72,16 +91,22 @@ nmap ga <Plug>(EasyAlign)
 " vim-terraform
 let g:terraform_fmt_on_save = 1
 
-" elm-vim
-let g:elm_setup_keybindings = 0
-
 " ale
+
+let g:ale_linter_aliases = {
+  \ 'svelte': ['css', 'javascript'],
+  \ 'gitcommit': ['markdown'],
+  \ }
 let g:ale_linters = {
   \ 'markdown': ['vale'],
-  \ 'ruby': ['ruby'],
+  \ 'ruby': ['rubocop', 'solargraph'],
+  \ 'javascript': ['eslint'],
+  \ 'svelte': ['eslint', 'stylelint']
   \}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
-let g:ale_linter_aliases = {'gitcommit': 'markdown'}
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#tabs_label = ''
 highlight ALEWarning gui=italic guifg=#ffe135
@@ -117,12 +142,9 @@ call deoplete#custom#option({
   \ 'num_processes': 2,
   \ })
 
-call deoplete#custom#option('sources', {
-  \ '_': ['buffer', 'omni', 'tag'],
-  \})
-
-" vim-jsx
-let g:jsx_ext_required = 0
+" call deoplete#custom#option('sources', {
+"   \ 'ruby': ['ale'],
+"   \ })
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -157,6 +179,12 @@ call denite#custom#option(
   \ '_',
   \ 'highlight_matched_char',
   \ 'None'
+  \)
+
+call denite#custom#option(
+  \ '_',
+  \ 'split',
+  \ 'floating'
   \)
 
 call denite#custom#var(
