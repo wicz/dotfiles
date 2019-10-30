@@ -66,6 +66,10 @@ nnoremap q: <nop>
 command! Q :q
 command! Qa :qa
 
+" auto-pairs
+let g:AutoPairsMultilineClose = 0
+let g:AutoPairsFlyMode = 0
+
 " context_filetype
 let g:context_filetype#filetypes = {}
 let g:context_filetype#filetypes.svelte =
