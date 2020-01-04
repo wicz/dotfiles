@@ -111,8 +111,6 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#tabs_label = ''
 highlight ALEWarning gui=italic guifg=#ffe135
 
 " vim-tmux-runner
@@ -152,12 +150,20 @@ call deoplete#custom#option({
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_count = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#tabs_label = ''
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
 
 " vim-gista
 let g:gista#client#default_username = 'wicz'
