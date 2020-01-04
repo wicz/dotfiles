@@ -3,6 +3,8 @@
   co = checkout
   ci = commit
   cp = cherry-pick
+  sw = switch
+  re = restore
 
 [credential]
   helper = osxkeychain

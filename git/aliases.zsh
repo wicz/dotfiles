@@ -8,7 +8,7 @@ alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_g
 alias glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
 
 # Branch (b)
-alias gbc='git checkout -b'
+alias gbc='git switch -c'
 alias gbl='git branch  --all --verbose'
 alias gbx='git branch --delete'
 alias gbX='git branch --delete --force'
