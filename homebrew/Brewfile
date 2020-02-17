@@ -33,6 +33,7 @@ brew "pandoc"
 brew "jq"
 brew "xsv"
 brew "jo", args: ["HEAD"]
+brew "fd"
 
 cask "1password"
 cask "arq"
