@@ -36,3 +36,4 @@ do
 done
 
 unset config_files
+if [ -e /Users/vinicius/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/vinicius/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

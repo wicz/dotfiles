@@ -4,4 +4,5 @@ if ! tmux has-session 2> /dev/null; then
   tmux new-session -d
 fi
 
-tmux -CC attach-session -d
+# tmux -CC attach-session -d
+tmux attach-session -d

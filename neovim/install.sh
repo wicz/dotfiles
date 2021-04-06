@@ -4,5 +4,6 @@ if [[ ! -d "$HOME/.config/nvim" ]]; then
 
   mkdir -p ~/.config/nvim/
   ln -sf "$ZSH/neovim/init.vim" ~/.config/nvim
+  ln -sf "$ZSH/neovim/after" ~/.config/nvim
   pip3 install neovim
 fi

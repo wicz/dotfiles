@@ -1,152 +1,136 @@
+runtime! 'plugin/sensible.vim'
+
 set clipboard=unnamed " macos clipboard sharing
-set expandtab " soft tabs
-set tabstop=2 " two-space indentation
-set shiftwidth=2
-set softtabstop=2
-set splitbelow " natural split order
-set splitright
-set list listchars=tab:▸\ ,trail:·,precedes:←,extends:→
-set number " show line numbers
-set textwidth=80 " wrap at 80
-set colorcolumn=+1 " show vertical guide at (textwidth + 1)
-set scrolloff=10 " number of lines around cursor
-set smartindent
-set cursorline " highlight current line
-set conceallevel=2
-set tags+=.tags
-set noswapfile
-set termguicolors
-set foldmethod=indent
+set colorcolumn=+1    " show vertical guide at (textwidth + 1)
+set conceallevel=0
+set cursorline        " highlight current line
+set expandtab         " soft tabs
 set foldlevelstart=99 " all folds open by default
-set nojoinspaces " use one space after punctuation
+set foldmethod=indent
+set hidden
+set list
+set listchars=tab:▸\ ,trail:·,precedes:←,extends:→
+set nobackup
+set nocompatible
+set nojoinspaces      " use one space after punctuation
+set noswapfile
+set number            " show line numbers
+set pumheight=10
+set scrolloff=10      " number of lines around cursor
+set shiftwidth=2
+set shortmess+=c
+set smartindent
+set softtabstop=2
+set splitbelow        " natural split order
+set splitright
+set tabstop=2         " two-space indentation
+set tags+=.tags
+set termguicolors
+set textwidth=80      " wrap at 80
+syntax on
 
 let g:python3_host_prog='/usr/local/bin/python3'
 
 call plug#begin()
-Plug 'carlitux/deoplete-ternjs'
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-runner'
+Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
-Plug 'elzr/vim-json'
-Plug 'evanleck/vim-svelte'
-Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'janko-m/vim-test'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'mail'] }
 Plug 'junegunn/vim-easy-align'
-Plug 'lambdalisue/vim-gista'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'mattn/emmet-vim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'svelte', 'eruby'] }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot'
 Plug 'shougo/context_filetype.vim'
-Plug 'shougo/denite.nvim'
-Plug 'shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
-Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-haml'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
-colorscheme base16-material-darker
-
-" disable q:
-nnoremap q: <nop>
-
-" command aliases
-command! Q :q
-command! Qa :qa
-
-" auto-pairs
-let g:AutoPairsMultilineClose = 0
-let g:AutoPairsFlyMode = 0
-
-" context_filetype
-let g:context_filetype#filetypes = {}
-let g:context_filetype#filetypes.svelte =
-  \ [
-  \    {'filetype' : 'javascript', 'start' : '<script>', 'end' : '</script>'},
-  \    {'filetype' : 'css', 'start' : '<style>', 'end' : '</style>'},
-  \ ]
-
-" vim-gutentags
-let g:gutentags_ctags_tagfile = '.tags'
-
-" nvim-colorizer
-lua require 'colorizer'.setup({
-  \ 'css';
-  \ 'html';
-  \ 'javascript';
-  \ })
-
-" vim-easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" vim-terraform
-let g:terraform_fmt_on_save = 1
+colorscheme dracula
 
 " ale
-
 let g:ale_linter_aliases = {
   \ 'svelte': ['css', 'javascript'],
   \ 'gitcommit': ['markdown'],
   \ }
 let g:ale_linters = {
   \ 'markdown': ['vale'],
-  \ 'ruby': ['rubocop', 'solargraph'],
   \ 'javascript': ['eslint'],
   \ 'svelte': ['eslint', 'stylelint']
   \}
-let g:ale_lint_on_save = 1
+let g:ale_completion_enabled = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
-highlight ALEWarning gui=italic guifg=#ffe135
+let g:ale_disable_lsp = 1
+let g:ale_sign_column_always = 1
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 'on_save'
 
-" vim-tmux-runner
-let g:VtrPercentage = 40
+" vim-fugitive
+set previewheight=20
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gr :Gread<CR>:w<CR>
 
-" vim-test
-let test#strategy = "vtr"
-nnoremap <Leader>ts :TestNearest<CR>
-nnoremap <Leader>tf :TestFile<CR>
-nnoremap <Leader>tl :TestLast<CR>
-
-" vim-markdown
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 0
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-" vim-slim
-autocmd BufRead,BufNewFile *.slim setlocal formatoptions-=t formatoptions+=l
+" vim-gutentags
+let g:gutentags_ctags_tagfile = '.tags'
 
 " emmet-vim
 let g:user_emmet_mode = 'iv'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,svelte EmmetInstall
+autocmd FileType html,css,svelte,eruby EmmetInstall
+
+" disable q:
+nnoremap q: <nop>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-call deoplete#custom#option({
-  \ 'smart_case': v:true,
-  \ 'num_processes': 2,
-  \ })
+" goyo
+function! s:goyo_enter()
+  set textwidth=0
+endfunction
 
-" call deoplete#custom#option('sources', {
-"   \ 'ruby': ['ale'],
-"   \ })
+function! s:goyo_leave()
+  set textwidth=80
+endfunction
+
+autocmd FileType mail Goyo
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" vim-projectionist
+let g:projectionist_heuristics = {
+  \ "Gemfile|package.json": {
+  \   "*": { "path": ["app", "lib"] }
+  \ }
+  \ }
+
+" vim-test
+let test#strategy = "dispatch"
+nnoremap <Leader>ts :TestNearest<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>tl :TestLast<CR>
+
+" vim-dispatch
+let g:dispatch_quickfix_height = 20
+let g:dispatch_no_maps = 1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -163,62 +147,25 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
+" fzf.vim
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
 
-" vim-gista
-let g:gista#client#default_username = 'wicz'
-let g:gista#command#post#default_public = 0
+imap <c-x><c-f> <plug>(fzf-complete-path)
 
-" denite.vim
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> q denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select')
-endfunction
+nnoremap <Leader>p :GFiles<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Rg<Space>
 
-call denite#custom#option(
-  \ '_',
-  \ 'highlight_matched_range',
-  \ 'None'
-  \)
-
-call denite#custom#option(
-  \ '_',
-  \ 'highlight_matched_char',
-  \ 'None'
-  \)
-
-call denite#custom#option(
-  \ '_',
-  \ 'split',
-  \ 'floating'
-  \)
-
-call denite#custom#var(
-  \ 'file/rec',
-  \ 'command',
-  \ ['rg', '--files', '--glob', '!.git']
-  \)
-
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
-" Disable deoplete within denite window
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-function! s:denite_filter_my_settings() abort
-  call deoplete#custom#buffer_option('auto_complete', v:false)
-endfunction
-
-nnoremap <Leader>p :Denite file/rec<CR>
-nnoremap <Leader>b :Denite buffer<CR>
-nnoremap <Leader>f :Denite -no-empty grep<CR>
+" context_filetype
+let g:context_filetype#filetypes = {}
+let g:context_filetype#filetypes.svelte =
+  \ [
+  \    {'filetype' : 'javascript', 'start' : '<script>', 'end' : '</script>'},
+  \    {'filetype' : 'css', 'start' : '<style>', 'end' : '</style>'},
+  \ ]
 
 " tabs
 nnoremap <Leader>tn :$tabnew<CR>
@@ -241,10 +188,20 @@ nnoremap <Leader>h :set hlsearch!<CR>
 " back to previous buffer
 nnoremap <Leader>\ :b#<CR>
 
-" vim-fugitive
-set previewheight=20
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gr :Gread<CR>:w<CR>
+" set spell by filetype
+autocmd FileType markdown,gitcommit,mail setlocal spell spelllang=en,es
+highlight SpellBad gui=italic guifg=#ff4444
+highlight SpellCap gui=italic
+
+" format whole file, keep current position
+nnoremap <Leader>= mzgg=G`z
+
+" C-c to Esc
+inoremap <C-c> <Esc>
+
+" colors
+highlight Comment guifg=#ABCDEF gui=italic
+highlight Visual  guifg=#FFFFFF guibg=#4B0082
 
 " strip whitespace on save for non-md
 fun! StripWhitespace()
@@ -255,14 +212,3 @@ fun! StripWhitespace()
   %s/\s\+$//e
 endfun
 autocmd BufWritePre * :call StripWhitespace()
-
-" set spell by filetype
-autocmd FileType markdown,gitcommit setlocal spell spelllang=en
-highlight SpellBad gui=italic guifg=#ff4444
-highlight SpellCap gui=italic
-
-" format whole file, keep current position
-nnoremap <Leader>= mzgg=G`z
-
-" colors
-highlight Comment guifg=#ABCDEF

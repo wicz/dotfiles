@@ -34,6 +34,8 @@ brew "jq"
 brew "xsv"
 brew "jo", args: ["HEAD"]
 brew "fd"
+brew "schollz/tap/croc"
+brew "vale"
 
 cask "1password"
 cask "arq"
@@ -68,3 +70,4 @@ mas "Money",       id: 402410845
 mas "Monosnap",    id: 540348655
 mas "SnippetsLab", id: 1006087419
 mas "Tomato One",  id: 907364780
+mas "MindNode",    id: 1289197285

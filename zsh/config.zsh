@@ -1,6 +1,7 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/curl/bin:/usr/local/sbin:$PATH"
+export FZF_PREVIEW_PREVIEW_BAT_THEME=Dracula
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -8,10 +9,9 @@ SAVEHIST=10000
 
 setopt COMPLETE_IN_WORD
 setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
-setopt SHARE_HISTORY
 setopt CORRECT
 unsetopt CASE_GLOB
 

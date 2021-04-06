@@ -1,5 +1,15 @@
-set -g escape-time 10
-set -g default-terminal "screen-256color"
-set -g pane-active-border-style "bg=default,fg=green"
-set -g pane-border-style "bg=default,fg=default"
-set -ga terminal-overrides ",xterm-256color:RGB"
+set  -g  escape-time 0
+set  -g  default-terminal "tmux-256color"
+set  -g  pane-active-border-style "bg=default,fg=green"
+set  -g  pane-border-style "bg=default,fg=default"
+set  -ga terminal-overrides ",tmux-256color:Tc"
+set  -g  base-index 1
+setw -g  pane-base-index 1
+setw -g  mouse on
+setw -g  mode-keys vi
+
+bind | split-window -h
+bind - split-window -v
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"

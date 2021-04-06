@@ -1,5 +1,8 @@
 alias g='git'
 
+# Commit (c)
+alias gca='git ci --amend'
+
 # Log (l)
 alias gll='git log'
 alias gl='git log --topo-order --date=short --pretty=format:"${_git_log_brief_format}"'
