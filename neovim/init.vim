@@ -27,6 +27,7 @@ set tabstop=2         " two-space indentation
 set tags+=.tags
 set termguicolors
 set textwidth=80      " wrap at 80
+set lazyredraw
 syntax on
 
 let g:python3_host_prog='/usr/local/bin/python3'
@@ -149,6 +150,7 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline#extensions#scrollbar#enabled = 0
 
 " fzf.vim
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.5 } }
