@@ -129,6 +129,7 @@ nnoremap <Leader>tl :TestLast<CR>
 " vim-dispatch
 let g:dispatch_quickfix_height = 20
 let g:dispatch_no_maps = 1
+let g:dispatch_no_tmux_make = 1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
