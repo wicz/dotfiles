@@ -36,7 +36,7 @@ call plug#begin()
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'mail'] }
@@ -96,9 +96,6 @@ autocmd FileType html,css,svelte,eruby EmmetInstall
 " disable q:
 nnoremap q: <nop>
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
 " goyo
 function! s:goyo_enter()
   set textwidth=0
@@ -124,7 +121,7 @@ let g:projectionist_heuristics = {
   \ }
 
 " vim-test
-let test#strategy = "dispatch"
+let test#strategy = "dispatch_background"
 nnoremap <Leader>ts :TestNearest<CR>
 nnoremap <Leader>tf :TestFile<CR>
 nnoremap <Leader>tl :TestLast<CR>
