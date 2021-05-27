@@ -82,7 +82,7 @@ let g:ale_open_list = 'on_save'
 
 " vim-fugitive
 set previewheight=20
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gr :Gread<CR>:w<CR>
 
 " vim-gutentags
