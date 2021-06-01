@@ -24,7 +24,7 @@ brew "fzf"
 brew "ripgrep"
 brew "httpie"
 brew "git"
-brew "hub"
+brew "gh"
 brew "getantibody/tap/antibody"
 brew "heroku/brew/heroku"
 brew "parity", args: ["ignore-dependencies"]
