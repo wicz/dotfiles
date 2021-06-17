@@ -13,3 +13,5 @@ bind - split-window -v
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+
+bind = choose-buffer "run \"tmux save-buffer -b %% - | pbcopy\""
