@@ -12,6 +12,11 @@ bind | split-window -h
 bind - split-window -v
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
+# Copy selection to buffer and system clipboard
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
 
-bind = choose-buffer "run \"tmux save-buffer -b %% - | pbcopy\""
+# Keep selection on mouse drag end
+unbind -T copy-mode-vi MouseDragEnd1Pane
+
+# Copy selected buffer to system clipboard
+bind y choose-buffer "run \"tmux save-buffer -b %% - | pbcopy\""
