@@ -16,7 +16,7 @@ alias gbl='git branch  --all --verbose'
 alias gbx='git branch --delete'
 alias gbX='git branch --delete --force'
 alias gbm='git branch --move'
-alias gbC='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias gbxm='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 # Fetch (f)
 alias gf='git fetch'
@@ -42,7 +42,7 @@ alias gsx='git stash drop'
 
 # Working copy (w)
 alias gwc='git clean -n'
-alias gwC='git clean -f'
+alias gwc!='git clean -f'
 
 # Index (i)
 alias gir='git reset'
@@ -64,6 +64,3 @@ alias gRm='git remote rename'
 # Merge (m)
 alias gm='git merge'
 alias gma='git merge --abort'
-
-# Pull Request (pr)
-alias gpr='hub pull-request'
